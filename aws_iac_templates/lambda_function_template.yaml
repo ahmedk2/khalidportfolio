@@ -11,4 +11,4 @@ Resources:
       Timeout: 10
       Policies:
         - DynamoDBCrudPolicy:
-            TableName: cloudresume2
+            TableName: cloudresume3
