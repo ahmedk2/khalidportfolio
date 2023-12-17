@@ -1,10 +1,5 @@
 # DEVELOPER PORTFOLIO
 
-
-## Author
-
-[@djk_23](https://twitter.com/djk_23)
-
 ## Sample Website
 
 A live demo is already available via this [link](https://www.khalidahmedportfolio.com/)
