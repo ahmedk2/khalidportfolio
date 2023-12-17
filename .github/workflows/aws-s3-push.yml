@@ -1,22 +1,27 @@
 name: aws-s3-push
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
-    permissions:
-          id-token: write
-          contents: read
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
-      - name: Checkout github repo
+      - name: Checkout GitHub repo
         uses: actions/checkout@v2
+
       - name: Setup AWS CLI
-        uses: aws-actions/configure-aws-credentials@master
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
+
       - name: Sync files to S3 bucket
         run: |
           aws s3 sync build s3://khalidahmedportfolio --delete
