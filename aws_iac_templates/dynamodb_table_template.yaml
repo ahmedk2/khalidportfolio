@@ -5,7 +5,7 @@ Resources:
   MyDynamoDBTable:
     Type: 'AWS::DynamoDB::Table'
     Properties:
-      TableName: cloudresume2
+      TableName: cloudresume3
       AttributeDefinitions:
         - AttributeName: id
           AttributeType: S
