@@ -1,25 +1,15 @@
 # DEVELOPER PORTFOLIO
 
-## Sample Website
+Following the common project called the [cloud resume challenge](https://cloudresumechallenge.dev/docs/the-challenge/aws/) I created my portfolio using a variety of technologies. I had fun doing this project and had a few struggles along the way. I was able to learn new skills and show them here.
 
-A live demo is already available via this [link](https://www.khalidahmedportfolio.com/)
+## Website
+
+A live demo is already available via https://www.khalidahmedportfolio.com/
 
 ## Tech Stack
 
 **Client:** HTML, CSS, Vanilla JavaSCript
 
-## Tools Used
+**Server** AWS S3, Route 53 and ACM, AWS Lambda, DynamoDB, IAM, AWS SAM/Cloudformation
 
-Below are are list of tools used, and the precise things they were used for:
-
-- [Ion Icons](https://ionic.io/ionicons) for hambuger menu bar
-- [Drawkit](https://www.drawkit.io/) for Jane Doe illustration
-- [Icon8](https://icons8.com/) for animated icons and skills icons
-- [Animate CSS](https://animate.style/) for Jane Doe's bio text animation
-- [Formspree](https://formspree.io/) for contact form submission and straight delivery to Gmail
-
-## Folder Structure
-
-The index.html and readme files are in the root folder, alongside the screenshot included in the readme.
-
-The assets folder contains the CSS and JavaScript files, all images and icons used, in their respective folders.
+### Detailed Notes on struggles and things observed while doing the cloud resume project [can be found here](https://github.com/ahmedk2/khalidportfolio/blob/main/build/Notes/README.md)
