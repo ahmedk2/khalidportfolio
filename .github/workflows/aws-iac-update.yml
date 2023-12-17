@@ -1,4 +1,4 @@
-name: aws-s3-push-data
+name: aws-iac-update
 
 on:
   push:
