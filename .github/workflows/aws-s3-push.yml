@@ -1,4 +1,4 @@
-name: aws-s3-push
+name: aws-s3-push-data
 
 on:
   push:
