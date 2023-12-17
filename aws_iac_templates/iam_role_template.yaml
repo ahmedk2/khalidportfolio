@@ -22,6 +22,7 @@ Resources:
                   - 'dynamodb:GetItem'
                   - 'dynamodb:UpdateItem'
                 Resource: 'arn:aws:dynamodb:us-east-1:210741841791:table/cloudresume3'
+
               - Effect: 'Allow'
                 Action:
                   - 'logs:CreateLogGroup'
