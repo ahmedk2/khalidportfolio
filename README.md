@@ -7,7 +7,7 @@
 
 ## Sample Website
 
-A live demo is already available via this [link](https://eager-williams-af0d00.netlify.app/?)
+A live demo is already available via this [link](https://www.khalidahmedportfolio.com/)
 
 ## Tech Stack
 
