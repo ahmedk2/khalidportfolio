@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '/aws_iac_templates/*'
 
 jobs:
   deploy:
