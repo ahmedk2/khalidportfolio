@@ -21,17 +21,20 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       
-      # adding || true ensures the command exits with code 0 so the other steps and occur
-      # this is helpful one only 1 file was edited the other steps would mention no changes occurred 
-      # and respond with exit code 0
       - name: Update DynamoDB table
         run: |
-          sam deploy --template-file ./aws_iac_templates/dynamodb_table_template.yaml --stack-name dynamoDBStack --region us-east-1 || true
+          if ! sam deploy --template-file ./aws_iac_templates/dynamodb_table_template.yaml --stack-name dynamoDBStack --region us-east-1; then
+            echo "Failed to update DynamoDB table, but continuing to the next step..."
+          fi
 
       - name: Update Lambda function
         run: |
-          sam deploy --template-file ./aws_iac_templates/lambda_function_template.yaml --stack-name visitCounter2Stack --region us-east-1  --s3-bucket khalidtestbucket --capabilities CAPABILITY_IAM || true
+          if ! sam deploy --template-file ./aws_iac_templates/lambda_function_template.yaml --stack-name visitCounter2Stack --region us-east-1  --s3-bucket khalidtestbucket --capabilities CAPABILITY_IAM; then
+            echo "Failed to update Lambda function, but continuing to the next step..."
+          fi
 
       - name: Update IAM Role
         run: |
-          sam deploy --template-file ./aws_iac_templates/iam_role_template.yaml --stack-name iamRoleStack --region us-east-1  --capabilities CAPABILITY_IAM || true
+          if ! sam deploy --template-file ./aws_iac_templates/iam_role_template.yaml --stack-name iamRoleStack --region us-east-1  --capabilities CAPABILITY_IAM; then
+            echo "Failed to update IAM Role, but continuing to the next step..."
+          fi
