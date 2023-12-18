@@ -8,7 +8,7 @@ Resources:
       Handler: lambda_function.lambda_handler
       Runtime: python3.8
       CodeUri: ./lambda_function
-      Timeout: 10
+      Timeout: 12
       Policies:
         - DynamoDBCrudPolicy:
             TableName: cloudresume3
