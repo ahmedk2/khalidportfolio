@@ -24,14 +24,17 @@ jobs:
       - name: Update DynamoDB table
         run: |
           sam deploy --template-file ./aws_iac_templates/dynamodb_table_template.yaml --stack-name dynamoDBStack --region us-east-1 
-        continue-on-error: true  # Continue to the next step even if this step fails
+        with:
+          continue-on-error: true  # Continue to the next step even if this step fails
 
       - name: Update Lambda function
         run: |
           sam deploy --template-file ./aws_iac_templates/lambda_function_template.yaml --stack-name visitCounter2Stack --region us-east-1  --s3-bucket khalidtestbucket --capabilities CAPABILITY_IAM
-        continue-on-error: true
+        with:
+          continue-on-error: true  # Continue to the next step even if this step fails
 
       - name: Update IAM Role
         run: |
           sam deploy --template-file ./aws_iac_templates/iam_role_template.yaml --stack-name iamRoleStack --region us-east-1  --capabilities CAPABILITY_IAM
-        continue-on-error: true
+        with:
+          continue-on-error: true  # Continue to the next step even if this step fails
