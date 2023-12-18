@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'aws_iac_templates/**'
 
 jobs:
-  deploy:
+  Deploy-Iac-To-AWS:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout GitHub repo
