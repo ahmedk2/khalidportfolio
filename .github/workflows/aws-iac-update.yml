@@ -20,21 +20,18 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-
+      
+      # adding || true ensures the command exits with code 0 so the other steps and occur
+      # this is helpful one only 1 file was edited the other steps would mention no changes occurred 
+      # and respond with exit code 0
       - name: Update DynamoDB table
         run: |
-          sam deploy --template-file ./aws_iac_templates/dynamodb_table_template.yaml --stack-name dynamoDBStack --region us-east-1 
-        with:
-          continue-on-error: true  # Continue to the next step even if this step fails
+          sam deploy --template-file ./aws_iac_templates/dynamodb_table_template.yaml --stack-name dynamoDBStack --region us-east-1 || true
 
       - name: Update Lambda function
         run: |
-          sam deploy --template-file ./aws_iac_templates/lambda_function_template.yaml --stack-name visitCounter2Stack --region us-east-1  --s3-bucket khalidtestbucket --capabilities CAPABILITY_IAM
-        with:
-          continue-on-error: true  # Continue to the next step even if this step fails
+          sam deploy --template-file ./aws_iac_templates/lambda_function_template.yaml --stack-name visitCounter2Stack --region us-east-1  --s3-bucket khalidtestbucket --capabilities CAPABILITY_IAM || true
 
       - name: Update IAM Role
         run: |
-          sam deploy --template-file ./aws_iac_templates/iam_role_template.yaml --stack-name iamRoleStack --region us-east-1  --capabilities CAPABILITY_IAM
-        with:
-          continue-on-error: true  # Continue to the next step even if this step fails
+          sam deploy --template-file ./aws_iac_templates/iam_role_template.yaml --stack-name iamRoleStack --region us-east-1  --capabilities CAPABILITY_IAM || true
