@@ -5,10 +5,10 @@ on:
     branches:
       - main
     paths:
-      - '/aws_iac_templates/*'
+      - 'aws_iac_templates/**'
 
 jobs:
-  deploy:
+  Deploy-Iac-To-AWS:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout GitHub repo
@@ -23,12 +23,12 @@ jobs:
 
       - name: Update DynamoDB table
         run: |
-          sam deploy --template-file ./aws_iac_templates/dynamodb_table_template.yaml --stack-name dynamoDBStack --region us-east-1 --profile iamadmin-production
+          sam deploy --template-file ./aws_iac_templates/dynamodb_table_template.yaml --stack-name dynamoDBStack --region us-east-1 
       
       - name: Update Lambda function
         run: |
-          sam deploy --template-file ./aws_iac_templates/lambda_function_template.yaml --stack-name visitCounter2Stack --region us-east-1 --profile iamadmin-production --s3-bucket khalidtestbucket --capabilities CAPABILITY_IAM
+          sam deploy --template-file ./aws_iac_templates/lambda_function_template.yaml --stack-name visitCounter2Stack --region us-east-1  --s3-bucket khalidtestbucket --capabilities CAPABILITY_IAM
       
       - name: Update IAM Role
         run: |
-          sam deploy --template-file ./aws_iac_templates/iam_role_template.yaml --stack-name iamRoleStack --region us-east-1 --profile iamadmin-production --capabilities CAPABILITY_IAM
+          sam deploy --template-file ./aws_iac_templates/iam_role_template.yaml --stack-name iamRoleStack --region us-east-1  --capabilities CAPABILITY_IAM
