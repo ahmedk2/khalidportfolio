@@ -1,2 +1,25 @@
 # Observations and Notes While Doing the Cloud Resume Challenge
 
+In my journey of creating a web portfolio, I've learned a lot about cloud technologies and faced some interesting challenges. Here is the story of how I started from creating a GitHub repository for my portfolio, to setting up a fully functional website hosted on AWS.
+
+I initiated my project by creating a GitHub repository for my web portfolio. To get things rolling, I used a starter kit for HTML, CSS, and JavaScript. I then integrated a visit counter script using chatgpt that stores the count locally via a browser cookie. With each page refresh, the count increments by one. I also personalized the website by making small tweaks to styles and contents.
+
+My next step was hosting my website on AWS, where I created an s3 bucket called 'khalidahmedportfolio'. The bucket initially had some access issues, which I resolved by modifying its policy to allow public viewing. I was cautious about potential security risks and noted that using a wildcard for principals might not be the best practice for larger projects.
+
+I then enabled static website hosting for my s3 bucket. However, I encountered an issue where the website was accessible via HTTP and not HTTPS. To resolve this, I used AWS CloudFront as my CDN, which provided a custom URL with HTTPS.
+
+Despite the HTTPS solution, the domain name wasn't professional enough for my liking. I decided to purchase a domain through AWS Route53, choosing 'khalidahmedportfolio.com'. However, when I tried using my Route53 record in CloudFront, I realized I needed a certificate. Thankfully, AWS Certificate Manager (ACM) came to the rescue. I created my certificate there, but it was stuck in a pending validation status for a while. After some research and a bit of tinkering, I found that creating a CNAME record in my hosted zone was the solution.
+
+Once my certificate was validated, I modified my CloudFront distribution to have alternative domain names and a custom SSL certificate. I added my registered domain name and SSL certificate crafted via AWS, and deployed my CloudFront distribution. Then I remembered that I needed to create a Route 53 record with a prefix of the hosted zone, so I added 'www' as a record. I made a new certificate to allow wildcard characters and modified my CloudFront distribution to include an alternate domain name using my new certificate.
+
+As I ran into issues along the way, I found solutions, and my new domain name was finally working. I modified the Route 53 record 'www.khalidahmedportfolio.com' to be an A type record instead of a CNAME record, allowing it to point to an AWS resource. This change made my static website viewable with the URL.
+
+During this process, I also created a DynamoDB table and a Lambda function. I faced some issues with the Lambda function not being able to read from the table values. However, I realized that the issue was due to using the wrong attribute name. Once corrected, the function worked perfectly, updating the attribute visits as expected.
+
+On my way to creating a more interactive website, I decided to venture into AWS DynamoDB. I created a table, but then I hit a roadblock with my Lambda function. It had trouble accessing the DynamoDB table. After some troubleshooting, I realized the issue was due to insufficient IAM permissions for my Lambda function. By adjusting the permissions to allow my Lambda function to read and write to the table, I resolved the issue. This was a valuable lesson in how crucial the right permissions are for ensuring the smooth operation of AWS services.
+
+As I continued to evolve my project, I explored GitHub actions and Infrastructure as Code (IaC) to automate my workflow and infrastructure updates. I set up GitHub actions following some useful online guides. However, I stumbled upon an error related to AWS credentials. It turned out that while I had set environment secrets, I hadn't set repository secrets. This was causing the credentials error in my workflow. By setting up the repository secrets for my AWS credentials, I was able to get my GitHub actions CI/CD workflow running smoothly.
+
+Next, I ventured into IaC, which meant I needed to have AWS SAM CLI installed locally. However, I ran into errors related to IAM when setting up the Lambda function. I discovered that the solution was to include the --capabilities CAPABILITY_IAM flag in the SAM deploy command. This experience taught me that while CloudFormation might have limitations, it's a powerful tool for automating API services and managing infrastructure.
+
+To wrap up my journey, I was able to automate some API services, which was a great step towards understanding the power of cloud technologies. Despite the challenges, the learning experience was invaluable and has equipped me with a deeper understanding of cloud technologies.
