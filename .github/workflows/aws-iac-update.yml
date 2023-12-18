@@ -20,21 +20,16 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-      
+
       - name: Update DynamoDB table
         run: |
-          if ! sam deploy --template-file ./aws_iac_templates/dynamodb_table_template.yaml --stack-name dynamoDBStack --region us-east-1; then
-            echo "Failed to update DynamoDB table, but continuing to the next step..."
-          fi
-
+          sam deploy --template-file ./aws_iac_templates/dynamodb_table_template.yaml --stack-name dynamoDBStack --region us-east-1 
+        
       - name: Update Lambda function
         run: |
-          if ! sam deploy --template-file ./aws_iac_templates/lambda_function_template.yaml --stack-name visitCounter2Stack --region us-east-1  --s3-bucket khalidtestbucket --capabilities CAPABILITY_IAM; then
-            echo "Failed to update Lambda function, but continuing to the next step..."
-          fi
+          sam deploy --template-file ./aws_iac_templates/lambda_function_template.yaml --stack-name visitCounter2Stack --region us-east-1  --s3-bucket khalidtestbucket --capabilities CAPABILITY_IAM
+        
 
       - name: Update IAM Role
         run: |
-          if ! sam deploy --template-file ./aws_iac_templates/iam_role_template.yaml --stack-name iamRoleStack --region us-east-1  --capabilities CAPABILITY_IAM; then
-            echo "Failed to update IAM Role, but continuing to the next step..."
-          fi
+          sam deploy --template-file ./aws_iac_templates/iam_role_template.yaml --stack-name iamRoleStack --region us-east-1  --capabilities CAPABILITY_IAM
