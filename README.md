@@ -4,7 +4,7 @@ Following the common project called the [cloud resume challenge](https://cloudre
 
 ## Website
 
-A live demo is already available via https://www.khalidahmedportfolio.com/
+A live website is already available via https://www.khalidahmedportfolio.com/
 
 ## Tech Stack
 
