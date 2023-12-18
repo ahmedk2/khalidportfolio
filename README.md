@@ -4,7 +4,7 @@ Following the common project called the [cloud resume challenge](https://cloudre
 
 ## Website
 
-A live demo is already available via https://www.khalidahmedportfolio.com/
+A live website is already available via https://www.khalidahmedportfolio.com/
 
 ## Tech Stack
 
@@ -12,4 +12,4 @@ A live demo is already available via https://www.khalidahmedportfolio.com/
 
 **Server** AWS S3, Route 53 and ACM, AWS Lambda, DynamoDB, IAM, AWS SAM/Cloudformation
 
-### Detailed Notes on struggles and things observed while doing the cloud resume project [can be found here](https://github.com/ahmedk2/khalidportfolio/blob/main/build/Notes/README.md)
+### Detailed Notes on struggles and things observed while doing the cloud resume project [can be found here](https://github.com/ahmedk2/khalidportfolio/blob/main/Notes/README.md)
