@@ -7,7 +7,7 @@ on:
     paths:
       - 'build/**'
 jobs:
-  deploy:
+  deploy-to-s3:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout GitHub repo
