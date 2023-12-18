@@ -2,7 +2,7 @@ import json
 import boto3
 
 dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('cloudresume2')
+table = dynamodb.Table('cloudresume3')
 
 
 def lambda_handler(event, context):
