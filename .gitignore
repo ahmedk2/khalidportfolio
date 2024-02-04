@@ -1,7 +1,5 @@
 # dependencies
-/build2/node_modules
-/.pnp
-.pnp.js
+/node_modules
 
 #misc
 .DS_Store
