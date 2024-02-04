@@ -8,8 +8,8 @@ A live website is already available via https://www.khalidahmedportfolio.com/
 
 ## Tech Stack
 
-**Client:** HTML, CSS, Vanilla JavaSCript
+**Client:** HTML, CSS, Vanilla JavaScript, React
 
-**Server** AWS S3, Route 53 and ACM, AWS Lambda, DynamoDB, IAM, AWS SAM/Cloudformation
+**Server** AWS S3, Cloudfront, Route 53 and ACM, AWS Lambda, DynamoDB, IAM, AWS SAM/Cloudformation CLI
 
 ### Detailed Notes on struggles and things observed while doing the cloud resume project [can be found here](https://github.com/ahmedk2/khalidportfolio/blob/main/Notes/README.md)
