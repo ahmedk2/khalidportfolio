@@ -1,2 +1,8 @@
+# dependencies
+/build2/node_modules
+/.pnp
+.pnp.js
+
+#misc
 .DS_Store
 .vscode

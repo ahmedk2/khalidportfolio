@@ -1,4 +1,4 @@
-## LinkedIn Article Potential
+# LinkedIn Article Potential
 
 🚀 Navigating Cloud Technologies: A Web Portfolio Journey
 
@@ -23,4 +23,3 @@ Automation Triumph:
 As the journey concluded, the successful automation of API services marked a significant milestone, unveiling the transformative potential of cloud technologies. Despite challenges, this learning experience has equipped me with a profound understanding of cloud technologies, setting the stage for continued growth and exploration.
 
 💻🚀 #CloudTech #WebPortfolio #TechJourney #AWSAdventures
-
