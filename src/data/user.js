@@ -33,11 +33,12 @@ const INFO = {
 			linkText: "View Project",
 			link: "https://github.com/ahmedk2/khalidportfolio/tree/main/",
 		},
+		
 		{
 			title: "Python To Do List",
 			description:
 				"App that runs a todo list locally using python and flask.",
-			logo: "../python-logo.png",
+			logo: "../Python-logo.png",
 			linkText: "View Project",
 			link: "https://github.com/ahmedk2/todoapp",
 		}
