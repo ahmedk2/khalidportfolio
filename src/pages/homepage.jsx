@@ -69,7 +69,7 @@ const Homepage = () => {
 
     // Fetch the number when the component mounts
     useEffect(() => {
-        fetch('https://dohl8y3a1a.execute-api.us-east-1.amazonaws.com/CloudResumeStageProd')
+        fetch('https://dohl8y3a1a.execute-api.us-east-1.amazonaws.com/CloudResumeStageProd/')
             .then(response => response.json())
             .then(data => {
                 // Assuming the number is in the body of the response
