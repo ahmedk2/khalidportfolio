@@ -54,7 +54,7 @@ const Works = () => {
 								className="work-image"
 							/>
 							<div className="work-title">AWS Certified Solutions Architect Associate</div>
-							<div className="work-duration">Mar 2024</div>
+							<div className="work-duration">Sept 2024</div>
 						</div>
 						<div className="work">
 							<img
