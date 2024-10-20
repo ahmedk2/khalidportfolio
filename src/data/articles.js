@@ -44,6 +44,9 @@ function article_1() {
 					<h3>DynamoDB and Lambda Function:</h3>
 					<p>Venturing deeper into AWS, I introduced DynamoDB and Lambda to create a more interactive website. Showing the number of visit counts to the webpage. This was meant to update the count each time a get request or refresh to the webpage occurs. Challenges emerged, notably with Lambda's interaction with DynamoDB. I was able to resolve this by using IAM roles and applying the right permission to access specific AWS resources. After creating the python function and setting up the IAM role I was able to query the DynamoDB table and update the item of the visit counter key.</p>
 
+					<h3>API Gateway:</h3>
+					<p>I took it a step further by using a API gateway instead of directly running lambda function since it is more secure/flexible. There is technically no authentication or authorization at this moment. However using an API gateway provides more control on how my function is accessed with Cross-origin resource sharing (CORS), it can set rate limits and much more.</p>
+
 					<h3>GitHub Actions and IaC Exploration:</h3>
 					<p>In the pursuit of automation, I delved into GitHub actions and Infrastructure as Code (IaC). Using GitHub actions I encountered a blocker related to AWS credentials. I was able to swiftly resolve it by incorporating repository secrets for a seamless CI/CD workflow. Further exploration into IaC highlighted the need for AWS SAM CLI and the inclusion of the --capabilities CAPABILITY_IAM flag in the SAM deploy command, showcasing the power of CloudFormation. Using AWS SAM CLI I was able to create resources and update them as needed. I created two separate Actions. First pipeline being to update the s3 bucket when a push event occurs on the main branch. The second pipeline being any changes made the the IaC files. Using these actions I was able to automate infrastructure creation and updating.</p>
 
