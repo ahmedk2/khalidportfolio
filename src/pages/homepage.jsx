@@ -134,7 +134,7 @@ const Homepage = () => {
 						</div>
 
 						<div className="homepage-socials">
-							<a
+							{/* <a
 								href={INFO.socials.twitter}
 								target="_blank"
 								rel="noreferrer"
@@ -153,7 +153,7 @@ const Homepage = () => {
 									icon={faLinkedin}
 									className="homepage-social-icon"
 								/>
-							</a>
+							</a> */}
 							<a
 								href={INFO.socials.github}
 								target="_blank"

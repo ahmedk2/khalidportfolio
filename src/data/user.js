@@ -6,9 +6,9 @@ const INFO = {
 	},
 
 	socials: {
-		twitter: "https://twitter.com/djk_23",
+		// twitter: "https://twitter.com/djk_23",
 		github: "https://github.com/ahmedk2",
-		linkedin: "https://www.linkedin.com/in/khalid-ahmed1/",
+		// linkedin: "https://www.linkedin.com/in/khalid-ahmed1/",
 	},
 
 	homepage: {
